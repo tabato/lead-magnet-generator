@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Lead Magnet Generator</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+<div class="container">
+
+  <header>
+    <div class="tag">Free Tool</div>
+    <h1>Lead Magnet<br/><span>Generator</span></h1>
+    <p class="subtitle">Enter your niche, audience, and funnel stage — get 7 opinionated lead magnet ideas with titles, formats, and delivery hooks.</p>
+  </header>
+
+  <div class="form-section">
+
+    <div class="api-note">
+      This tool runs entirely in your browser. Your API key is never stored or sent anywhere except directly to Anthropic. Get yours free at <a href="https://console.anthropic.com" target="_blank">console.anthropic.com</a>.
+    </div>
+
+    <div class="field" style="margin-bottom: 24px;">
+      <label>Anthropic API Key</label>
+      <input type="password" id="api-key" placeholder="sk-ant-api03-..."/>
+    </div>
+
+    <div class="form-grid">
+      <div class="field">
+        <label>Your Niche / Industry</label>
+        <input type="text" id="niche" placeholder="e.g. AI sales tools for B2B SaaS"/>
+      </div>
+      <div class="field">
+        <label>Target Audience (ICP)</label>
+        <input type="text" id="icp" placeholder="e.g. Founders doing outbound sales"/>
+      </div>
+      <div class="field">
+        <label>Main Pain Point</label>
+        <input type="text" id="pain" placeholder="e.g. Can't get meetings booked"/>
+      </div>
+      <div class="field">
+        <label>Funnel Stage</label>
+        <select id="funnel">
+          <option value="top">Top of funnel — cold audience</option>
+          <option value="mid" selected>Middle — aware of problem</option>
+          <option value="bottom">Bottom — evaluating solutions</option>
+        </select>
+      </div>
+      <div class="field full">
+        <label>Desired Outcome for Your ICP</label>
+        <input type="text" id="outcome" placeholder="e.g. Book 10+ qualified calls per month"/>
+      </div>
+      <div class="field full">
+        <label>Preferred Formats (optional)</label>
+        <div class="checkbox-group" id="formats">
+          <label class="chip"><input type="checkbox" value="Checklist"/> Checklist</label>
+          <label class="chip"><input type="checkbox" value="PDF Guide"/> PDF Guide</label>
+          <label class="chip"><input type="checkbox" value="Email Course"/> Email Course</label>
+          <label class="chip"><input type="checkbox" value="Template"/> Template</label>
+          <label class="chip"><input type="checkbox" value="Video Training"/> Video Training</label>
+          <label class="chip"><input type="checkbox" value="Calculator"/> Calculator</label>
+          <label class="chip"><input type="checkbox" value="Swipe File"/> Swipe File</label>
+          <label class="chip"><input type="checkbox" value="Quiz"/> Quiz</label>
+        </div>
+      </div>
+    </div>
+
+    <button class="btn-generate" id="gen-btn" onclick="generate()">
+      <span class="spinner" id="spinner"></span>
+      <span id="btn-label">Generate 7 Lead Magnet Ideas</span>
+    </button>
+    <div class="error-box" id="error-box"></div>
+
+  </div>
+
+  <div id="results">
+    <div class="results-header">
+      <div class="results-title">Your Lead Magnet Ideas</div>
+      <button class="btn-copy-all" onclick="copyAll()">Copy All</button>
+    </div>
+    <div class="ideas-grid" id="ideas-grid"></div>
+  </div>
+
+  <footer>
+    <span>Built with Claude API · Open source</span>
+    <a href="https://github.com" target="_blank">View on GitHub →</a>
+  </footer>
+
+</div>
+<script src="app.js"></script>
+</body>
+</html>
