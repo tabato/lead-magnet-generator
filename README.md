@@ -14,6 +14,15 @@ Built with the Anthropic Claude API. Runs entirely in your browser, no backend r
 - Copy individual ideas or all at once
 - Runs client-side — your API key never leaves your browser
 
+## Model Support
+
+| Model | Status |
+|---|---|
+| Claude (Anthropic) | ✅ Fully supported |
+| GPT-4o (OpenAI) | ⚡ Experimental |
+
+> Note: Claude is the primary supported model. OpenAI support is experimental — if you run into issues, Claude is your best bet.
+
 ## Usage
 
 1. Clone the repo

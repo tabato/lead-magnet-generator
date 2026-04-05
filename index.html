@@ -19,13 +19,40 @@
 
   <div class="form-section">
 
-    <div class="api-note">
-      This tool runs entirely in your browser. Your API key is never stored or sent anywhere except directly to Anthropic. Get yours free at <a href="https://console.anthropic.com" target="_blank">console.anthropic.com</a>.
+    <!-- Model Toggle -->
+    <div class="model-toggle-wrap">
+      <div class="model-toggle" id="model-toggle">
+        <button class="model-btn active" data-model="claude" onclick="switchModel('claude')">
+          <span class="model-dot claude-dot"></span>
+          Claude (Anthropic)
+        </button>
+        <button class="model-btn" data-model="openai" onclick="switchModel('openai')">
+          <span class="model-dot openai-dot"></span>
+          GPT-4o (OpenAI)
+        </button>
+      </div>
     </div>
 
-    <div class="field" style="margin-bottom: 24px;">
-      <label>Anthropic API Key</label>
-      <input type="password" id="api-key" placeholder="sk-ant-api03-..."/>
+    <!-- Claude Key -->
+    <div class="api-key-field" id="claude-key-field">
+      <div class="api-note">
+        Runs entirely in your browser. Your key goes directly to Anthropic — never stored anywhere else. Get yours free at <a href="https://console.anthropic.com" target="_blank">console.anthropic.com</a>.
+      </div>
+      <div class="field">
+        <label>Anthropic API Key</label>
+        <input type="password" id="claude-api-key" placeholder="sk-ant-api03-..."/>
+      </div>
+    </div>
+
+    <!-- OpenAI Key -->
+    <div class="api-key-field" id="openai-key-field" style="display:none">
+      <div class="api-note openai-note">
+        Runs entirely in your browser. Your key goes directly to OpenAI — never stored anywhere else. Get yours at <a href="https://platform.openai.com/api-keys" target="_blank">platform.openai.com</a>.
+      </div>
+      <div class="field">
+        <label>OpenAI API Key</label>
+        <input type="password" id="openai-api-key" placeholder="sk-proj-..."/>
+      </div>
     </div>
 
     <div class="form-grid">
@@ -85,8 +112,8 @@
   </div>
 
   <footer>
-    <span>Built with Claude API · Open source</span>
-    <a href="https://github.com" target="_blank">View on GitHub →</a>
+    <span>Built with Claude + GPT-4o · Open source</span>
+    <a href="https://github.com/tabato/lead-magnet-generator" target="_blank">View on GitHub →</a>
   </footer>
 
 </div>

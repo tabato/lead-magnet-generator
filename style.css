@@ -84,6 +84,82 @@ h1 span { color: var(--accent); }
   border-bottom: 1px solid var(--border);
 }
 
+/* Model Toggle */
+.model-toggle-wrap {
+  margin-bottom: 28px;
+}
+
+.model-toggle {
+  display: flex;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 4px;
+  gap: 4px;
+}
+
+.model-btn {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: none;
+  border: none;
+  color: var(--muted);
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 500;
+  padding: 10px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.model-btn:hover { color: var(--text); }
+
+.model-btn.active {
+  background: var(--surface2);
+  color: var(--text);
+  border: 1px solid var(--border);
+}
+
+.model-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.claude-dot { background: #ff4444; }
+.openai-dot { background: #10a37f; }
+
+/* API note */
+.api-note {
+  background: rgba(255, 68, 68, 0.04);
+  border: 1px solid rgba(255, 68, 68, 0.15);
+  padding: 14px 18px;
+  border-radius: 6px;
+  font-size: 13px;
+  color: var(--muted);
+  margin-bottom: 16px;
+  line-height: 1.6;
+}
+
+.api-note.openai-note {
+  background: rgba(16, 163, 127, 0.04);
+  border-color: rgba(16, 163, 127, 0.15);
+}
+
+.api-note a { color: var(--accent); text-decoration: none; }
+.api-note a:hover { text-decoration: underline; }
+.openai-note a { color: #10a37f; }
+
+.api-key-field {
+  margin-bottom: 24px;
+}
+
+/* Form grid */
 .form-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -192,21 +268,6 @@ select option { background: var(--surface2); }
 }
 
 @keyframes spin { to { transform: rotate(360deg); } }
-
-/* API note */
-.api-note {
-  background: rgba(255, 68, 68, 0.04);
-  border: 1px solid rgba(255, 68, 68, 0.15);
-  padding: 14px 18px;
-  border-radius: 6px;
-  font-size: 13px;
-  color: var(--muted);
-  margin-bottom: 24px;
-  line-height: 1.6;
-}
-
-.api-note a { color: var(--accent); text-decoration: none; }
-.api-note a:hover { text-decoration: underline; }
 
 /* Results */
 #results {
